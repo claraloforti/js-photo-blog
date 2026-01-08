@@ -12,19 +12,19 @@ const endpoint = "https://lanciweb.github.io/demo/api/pictures/";
 axios.get(endpoint)
     .then(response => {
         // Ottengo l'array di oggetti dall'API
-        const posts = response.data;
+        const cards = response.data;
 
         // Creo variabile di accumulo per l'output
-        let postsOutput = "";
+        let cardsOutput = "";
 
-        // Ciclo l'array di oggetti per estrapolare le info
-        posts.forEach(post => {
+        // Ciclo l'array di oggetti per estrapolare i dati
+        cards.forEach(card => {
 
             // Destructuring
-            const { url, title, date } = post;
+            const { url, title, date } = card;
 
             // Valorizzo la variabile di accumulo dell'output
-            postsOutput += `
+            cardsOutput += `
             <div class="card">
                 <img src="${url}" alt="immagine" class="response-img">
                 <h2>${title}</h2>
@@ -34,7 +34,7 @@ axios.get(endpoint)
         });
 
         // Inserisco in pagina le card
-        outputContainer.innerHTML = postsOutput;
+        outputContainer.innerHTML = cardsOutput;
     })
 
     .catch(error => {
