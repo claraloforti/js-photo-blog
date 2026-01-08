@@ -1,7 +1,7 @@
 
 // SETUP
 // Seleziono elemento di container output
-const outputContainer = document.querySelector(".container-cards");
+const outputContainer = document.querySelector(".container .row");
 
 // Dichiaro variabile con l'URL del server da cui estrapolerò i dati
 const endpoint = "https://lanciweb.github.io/demo/api/pictures/";
@@ -25,11 +25,13 @@ axios.get(endpoint)
 
             // Valorizzo la variabile di accumulo dell'output
             cardsOutput += `
-            <div class="card">
-                <img src="${url}" alt="immagine" class="response-img">
-                <h2>${title}</h2>
-                <p>${date}</p>
-                <img src="../assets_day1/img/pin.svg" alt="pin" class="pin">
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="card">
+                    <img src="${url}" alt="immagine" class="response-img">
+                    <h2>${title}</h2>
+                    <p>${date}</p>
+                    <img src="../assets_day1/img/pin.svg" alt="pin" class="pin">
+                </div>
             </div>`;
         });
 
