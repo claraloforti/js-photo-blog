@@ -31,4 +31,16 @@ h1 {
     left: 50%;
     top: 0;
     transform: translate(-50%, -40%);
+    display: block;
+}
+
+/* Hover sulle card */
+.card:hover .pin {
+    display: none;
+}
+
+.card:hover {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    transform: rotate(5deg);
 }
